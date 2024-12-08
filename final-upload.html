@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Status - Graphic Era College</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Basic Reset */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #4caf50, #81c784);
+      }
+
+      /* Container */
+      .status-container {
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 500px;
+      }
+
+      .status-container h1 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .status-container p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 25px;
+      }
+
+      /* Buttons */
+      .status-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .status-buttons a {
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        color: white;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+
+      .home-btn {
+        background-color: #4caf50;
+      }
+
+      .home-btn:hover {
+        background-color: #388e3c;
+      }
+
+      .retry-btn {
+        background-color: #f44336;
+      }
+
+      .retry-btn:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="status-container">
+      <!-- Upload Success -->
+      <h1>🎉 Upload Successful!</h1>
+      <p>
+        Your notes have been successfully uploaded to our repository. Thank you
+        for your contribution!
+      </p>
+      <div class="status-buttons">
+        <a href="/" class="home-btn">Go to Home</a>
+      </div>
+
+      <!-- Uncomment the section below for Upload Failure -->
+      <!-- 
+    <h1>❌ Upload Failed</h1>
+    <p>Something went wrong while uploading your notes. Please try again.</p>
+    <div class="status-buttons">
+      <a href="/upload" class="retry-btn">Try Again</a>
+    </div>
+    --></div>
+  </body>
+</html>

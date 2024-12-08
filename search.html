@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Notes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #4caf50, #81c784);
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+      }
+
+      input[type="text"] {
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .results {
+        margin-top: 20px;
+        text-align: left;
+        background: white;
+        color: black;
+        border-radius: 5px;
+        padding: 10px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .result-item {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .result-item:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search Notes</h1>
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search by title, description, or category"
+    />
+    <div class="results" id="results"></div>
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const resultsContainer = document.getElementById("results");
+
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value;
+        fetch(`/api/search?q=${query}`)
+          .then((response) => response.json())
+          .then((data) => {
+            resultsContainer.innerHTML = "";
+            if (data.length === 0) {
+              resultsContainer.innerHTML = "<p>No results found.</p>";
+              return;
+            }
+            data.forEach((item) => {
+              resultsContainer.innerHTML += `
+                <div class="result-item">
+                  <h3>${item.title}</h3>
+                  <p>${item.description}</p>
+                  <p><strong>Category:</strong> ${item.category}</p>
+                </div>
+              `;
+            });
+          });
+      });
+      fetch(`/api/search?q=${searchQuery}`)
+        .then((response) => response.json())
+        .then((data) => {
+          // Display search results
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>

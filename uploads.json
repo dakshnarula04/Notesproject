@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1679823472301,
+    "title": "Physics Notes",
+    "description": "Comprehensive physics notes covering all major topics.",
+    "category": "Science",
+    "filePath": "uploads/physics_notes.pdf",
+    "originalName": "Physics_Notes.pdf"
+  },
+  {
+    "id": 1679823483402,
+    "title": "Algebra Basics",
+    "description": "Basic algebra concepts for beginners.",
+    "category": "Mathematics",
+    "filePath": "uploads/algebra_basics.docx",
+    "originalName": "Algebra_Basics.docx"
+  },
+  {
+    "title": "mnbkjb",
+    "description": "jblj",
+    "category": "Mathematics",
+    "filePath": "uploads\\1d8c52ba1d0b172dd5506bab4617de66"
+  },
+  {
+    "title": "Tbc 103",
+    "description": "Maths",
+    "category": "Mathematics",
+    "filePath": "uploads\\1eeedde4f2e6aee7c7cf2b297f93b555"
+  },
+  {
+    "title": "testt ",
+    "description": "testing",
+    "category": "Mathematics",
+    "filePath": "uploads\\241b673a7d6142885a9779770e8b2c34",
+    "originalName": "Comp application.PDF"
+  }
+]

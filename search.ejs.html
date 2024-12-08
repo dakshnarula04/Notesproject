@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Notes</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Search Notes</h1>
+    <form method="POST" action="/search">
+      <input
+        type="text"
+        name="query"
+        placeholder="Enter keywords..."
+        required
+      />
+      <button type="submit">Search</button>
+    </form>
+    <ul>
+      <% if (notes.length === 0) { %>
+      <li>No results found.</li>
+      <% } else { %> <% notes.forEach(note => { %>
+      <li>
+        <strong><%= note.title %></strong>: <%= note.description %> (<%=
+        note.category %>)
+        <a href="/uploads/<%= note.filename %>" download>Download</a>
+      </li>
+      <% }); %> <% } %>
+    </ul>
+  </body>
+</html>

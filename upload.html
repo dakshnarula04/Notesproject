@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Notes - Graphic Era College</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #4caf50, #81c784);
+      }
+      .upload-container {
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 500px;
+      }
+      .upload-container h1 {
+        font-size: 28px;
+        color: #333;
+      }
+      .upload-container form {
+        margin-top: 20px;
+      }
+      .upload-container input,
+      .upload-container textarea,
+      .upload-container select,
+      .upload-container button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .upload-container button {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .upload-container button:hover {
+        background-color: #388e3c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="upload-container">
+      <h1>Upload Your Notes</h1>
+      <form action="/password" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Enter Title" required />
+        <textarea
+          name="description"
+          rows="4"
+          placeholder="Enter Description"
+          required
+        ></textarea>
+        <select name="category" required>
+          <option value="" disabled selected>Select Category</option>
+          <option value="Science">Science</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Business">Business</option>
+          <option value="Others">Others</option>
+        </select>
+        <input
+          type="file"
+          name="file"
+          accept=".pdf,.doc,.docx,.ppt,.pptx"
+          required
+        />
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  </body>
+</html>
